@@ -17,6 +17,7 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
 
 1. *[MAC ONLY]* Install Xcode from Mac App Store *(you need build tools from it)*
 2. *[MAC ONLY]* Install Homebrew `https://brew.sh/`
+2. *[MAC ONLY]* Install gpg `brew install gpg`
 2. *[WINDOWS ONLY]* Install Ruby and Rails from Rails Installer `http://railsinstaller.org/`
 3. Install Ruby `https://rvm.io`
 4. Install Ruby `2.4.2` by `rvm install 2.4.2`
