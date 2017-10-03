@@ -5,7 +5,8 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
 * Ruby on Rails
   * Homepage: http://rubyonrails.org/
   * Guides: http://guides.rubyonrails.org/
-* Bundler homepage: http://bundler.io/
+* Bundler
+  * http://bundler.io/
 * Git
   * https://git-scm.com/documentation
   * http://rogerdudler.github.io/git-guide/
