@@ -20,6 +20,7 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
 2. *[MAC ONLY]* Install gpg `brew install gpg`
 2. *[WINDOWS ONLY]* Install Ruby and Rails from Rails Installer `http://railsinstaller.org/`
 2. *[WINDOWS ONLY]* Install Git for Windows `https://git-for-windows.github.io/`
+2. *[MAC ONLY]* Update Git for Mac `brew install git`
 3. *[MAC & Linux ONLY]* Install Ruby `https://rvm.io`
 4. *[MAC & Linux ONLY]* Install Ruby `2.4.2` by `rvm install 2.4.2`
 5. *[MAC & Linux ONLY]* Select the installed Ruby `2.4.2` in RVM and use it by default `rvm use 2.4.2 --default`
