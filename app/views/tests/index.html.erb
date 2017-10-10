@@ -16,9 +16,13 @@
       <tr>
         <td><%= test.title %></td>
         <td><%= test.questions %></td>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to test, class: 'btn btn-default' do %>
+              <%= fa_icon 'info-circle', text: 'Show' %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Edit', edit_test_path(test), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', test, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Test', new_test_path, class: 'btn btn-success' %>
+<%= link_to new_test_path, class: 'btn btn-success' do %>
+    <%= fa_icon 'plus', text: 'New Test' %>
+<% end %>
