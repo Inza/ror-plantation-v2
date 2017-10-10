@@ -11,6 +11,9 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
   * https://git-scm.com/documentation
   * http://rogerdudler.github.io/git-guide/
   * http://ohshitgit.com/
+  * Git Flow
+    * https://datasift.github.io/gitflow/IntroducingGitFlow.html
+    * https://github.com/nvie/gitflow
 * RSpec
   * http://rspec.info/
 
