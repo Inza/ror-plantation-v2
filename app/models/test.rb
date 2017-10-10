@@ -1,2 +1,26 @@
+# == Schema Information
+#
+# Table name: tests
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  questions  :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  subject_id :integer
+#
+# Indexes
+#
+#  index_tests_on_subject_id  (subject_id)
+#
+
 class Test < ApplicationRecord
+  belongs_to :subject
+
+  # Simple validation syntax (not so great)
+  #validates_presence_of :title, :desription
+  #validates_numericality_of :title
+
+  # Alternatice (better) syntax
+  validates :title, presence: true#, numericality: true
 end

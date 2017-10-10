@@ -33,19 +33,24 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
 gem 'simple_form', '~> 3.5'
+gem 'simple_form-magic_submit', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'rspec', '~> 3.6'
+  #gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.6', '>= 3.6.1'
 end
 
 group :development do
+  gem 'annotate', '~> 2.7', '>= 2.7.2'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
