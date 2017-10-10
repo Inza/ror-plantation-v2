@@ -10,7 +10,7 @@
 #
 
 class Test < ApplicationRecord
-  # Siple validation syntax (not so great)
+  # Simple validation syntax (not so great)
   #validates_presence_of :title, :desription
   #validates_numericality_of :title
 
