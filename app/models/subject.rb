@@ -10,6 +10,8 @@
 #
 
 class Subject < ApplicationRecord
+  has_many :tests
+
   validates :title, presence: true
   validates :code, presence: true
 end
