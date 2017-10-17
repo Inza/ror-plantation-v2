@@ -17,5 +17,8 @@
 #
 
 class Question < ApplicationRecord
+  has_many :question_assignments
+  has_many :tests, through: :question_assignments
+
   belongs_to :topic
 end
