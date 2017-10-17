@@ -9,4 +9,6 @@
 #
 
 class StudyProgram < ApplicationRecord
+  has_many :subject_assignments
+  has_many :subjects, through: :subject_assignments
 end
