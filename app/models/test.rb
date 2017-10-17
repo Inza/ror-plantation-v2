@@ -7,6 +7,11 @@
 #  questions  :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  topic_id   :integer
+#
+# Indexes
+#
+#  index_tests_on_topic_id  (topic_id)
 #
 
 class Test < ApplicationRecord
