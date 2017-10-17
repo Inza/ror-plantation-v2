@@ -33,7 +33,9 @@ Subject "1" <-- "n" Test
 Topic "1" <-- "0..n" TopicAssignment
 Test "1" <-- "0..n" TopicAssignment
 
-Test "1" <-- "n" Question
+Question "1" <-- "0..n" QuestionAssignment
+Test "1" <-- "0..n" QuestionAssignment
+
 Topic "1" <-- "n" Question
 Question "1" <-- "0..n" Answer
 Question "1" <-- "0..n" Difficulty
