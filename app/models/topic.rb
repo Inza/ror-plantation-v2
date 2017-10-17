@@ -14,5 +14,8 @@
 #
 
 class Topic < ApplicationRecord
+  has_many :topic_assignments
+  has_many :tests, through: :topic_assignments
+
   belongs_to :subject
 end
