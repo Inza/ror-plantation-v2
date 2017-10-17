@@ -16,8 +16,33 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
     * https://github.com/nvie/gitflow
 * RSpec
   * http://rspec.info/
+  
+### Model Diagram
 
-### Tutorial
+```plantuml
+@startuml
+enum Difficulty {
+  NORMAL
+  NIGHTMARE
+  HELL
+}
+
+Subject "1" <-- "n" Topic
+
+Topic "1" <-- "0..n" TopicAssignment
+Test "1" <-- "0..n" TopicAssignment
+
+Test "1" <-- "n" Question
+Topic "1" <-- "n" Question
+Question "1" <-- "0..n" Answer
+Question "1" <-- "0..n" Difficulty
+
+Tag "1" <-- "0..n" TagAssignment
+Subject "1" <-- "0..n" TagAssignment
+@enduml
+```
+
+### Ruby Installation Tutorial
 
 1. *[MAC ONLY]* Install Xcode from Mac App Store *(you need build tools from it)*
 2. *[MAC ONLY]* Install Homebrew `https://brew.sh/`
@@ -35,9 +60,9 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
 8. Go to folder where you would like to have the new app
 9. Create new Rails app by `rails new my-app`
 10. Go to the generate folder by `cd my-app`
-11. Type `2.4.2` into `.ruby-version`
+11. Type `2.4.2` into `.ruby-version` (create file called `.ruby-version` and type `2.4.2` into it - or `2.3.3` on Windows)
 12. Adjust `Gemfile`
 13. Install all new gems (ruby dependencies) by `bundle install`
 14. Run you app by `rails server` or `rails s`
-15. Open `0.0.0.0:3000` or `127.0.0.1:3000` or `localhost:3000` in your browser to see Rails homepage
-16. Open `0.0.0.0:3000/tests` or `127.0.0.1:3000/tests` or `localhost:3000/tests` in your browser to see the generated tests administration
+15. Open `0.0.0.0:3000` (on Mac/Linux) or `localhost:3000` (on Windows) in your browser to see Rails homepage
+16. *[If you cloned this git repository]* Open `0.0.0.0:3000/tests` or `127.0.0.1:3000/tests` or `localhost:3000/tests` in your browser to see the generated tests administration
