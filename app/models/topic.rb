@@ -14,5 +14,8 @@
 #
 
 class Topic < ApplicationRecord
+  has_many :tests
+
   belongs_to :subject
+
 end

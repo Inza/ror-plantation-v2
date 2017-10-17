@@ -15,7 +15,7 @@
 #
 
 class Test < ApplicationRecord
-  #belongs_to :subject
+  belongs_to :topic
 
   # Simple validation syntax (not so great)
   #validates_presence_of :title, :desription
