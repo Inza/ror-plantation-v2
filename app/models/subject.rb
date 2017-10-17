@@ -11,6 +11,9 @@
 
 class Subject < ApplicationRecord
   has_many :topics
+  has_many :tests
+  has_many :subject_assignments
+  has_many :study_programs, through: :subject_assignments
 
   validates :title, presence: true
   validates :code, presence: true
