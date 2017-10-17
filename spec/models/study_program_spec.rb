@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: study_programs
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 RSpec.describe StudyProgram, type: :model do
