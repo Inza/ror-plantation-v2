@@ -1,0 +1,2 @@
+class StudyProgram < ApplicationRecord
+end
