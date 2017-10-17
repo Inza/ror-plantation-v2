@@ -28,6 +28,7 @@ enum Difficulty {
 }
 
 Subject "1" <-- "n" Topic
+Subject "1" <-- "n" Test
 
 Topic "1" <-- "0..n" TopicAssignment
 Test "1" <-- "0..n" TopicAssignment
@@ -37,8 +38,8 @@ Topic "1" <-- "n" Question
 Question "1" <-- "0..n" Answer
 Question "1" <-- "0..n" Difficulty
 
-Tag "1" <-- "0..n" TagAssignment
-Subject "1" <-- "0..n" TagAssignment
+StudyProgram "1" <-- "0..n" SubjectAssignment
+Subject "1" <-- "0..n" SubjectAssignment
 @enduml
 ```
 
