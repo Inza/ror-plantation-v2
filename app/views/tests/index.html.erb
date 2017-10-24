@@ -17,7 +17,7 @@
       <tr>
         <td><%= test.title %></td>
         <td><%= test.subject.title if test.subject.present? %></td>
-        <td><%= test.questions.map{|q| q.title}.join(',<br>').html_safe if test.questions.any? %></td>
+        <td><%= raw test.questions.map{|q| q.title}.join(',<br>') if test.questions.any? %></td>
         <td>
           <%= link_to test, class: 'btn btn-default' do %>
               <%= fa_icon 'info-circle', text: 'Show' %>
