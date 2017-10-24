@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
-  permits :title, :questions, :subject_id
+  permits :title, :subject_id, question_ids: []
 
   def index
     @tests = Test.all
