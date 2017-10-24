@@ -42,6 +42,8 @@ gem 'simple_form-magic_submit', '~> 1.2'
 
 gem 'enumerize', '~> 2.1', '>= 2.1.2'
 
+gem 'action_args', '~> 2.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
