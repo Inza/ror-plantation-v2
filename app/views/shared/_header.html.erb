@@ -1,0 +1,15 @@
+<%= navbar do %>
+    <%= vertical do %>
+        <%= link_to 'Plantation', root_path %>
+    <% end %>
+    <%= horizontal do %>
+        <%= nav class: 'navbar-nav' do %>
+            <%= link_to 'Tests', tests_path %>
+            <%= link_to 'Subjects', subjects_path %>
+        <% end %>
+        <%= nav class: 'navbar-right' do %>
+            <%= link_to 'Profile', root_path %>
+            <%= link_to 'Settings', root_path %>
+        <% end %>
+    <% end %>
+<% end %>

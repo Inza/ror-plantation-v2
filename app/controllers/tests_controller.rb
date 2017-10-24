@@ -1,6 +1,8 @@
 class TestsController < ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
+  permits :title, :subject_id, question_ids: []
+
   def index
     @tests = Test.all
   end
@@ -15,19 +17,19 @@ class TestsController < ApplicationController
   def edit
   end
 
-  def create
-    @test = Test.new(test_params)
+  def create(test)
+    @test = Test.new(test)
 
     if @test.save
-      redirect_to @test, notice: 'Test was successfully created.'
+      redirect_to tests_path, notice: 'Test was successfully created.'
     else
       render :new
     end
   end
 
-  def update
-    if @test.update(test_params)
-      redirect_to @test, notice: 'Test was successfully updated.'
+  def update(test)
+    if @test.update(test)
+      redirect_to tests_path, notice: 'Test was successfully updated.'
     else
       render :edit
     end
@@ -38,14 +40,8 @@ class TestsController < ApplicationController
     redirect_to tests_url, notice: 'Test was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_test
-      @test = Test.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def test_params
-      params.require(:test).permit(:title, :questions, :subject_id)
-    end
+private
+  def set_test(id)
+    @test = Test.find(id)
+  end
 end
