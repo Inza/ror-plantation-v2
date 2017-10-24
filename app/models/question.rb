@@ -26,5 +26,5 @@ class Question < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :difficulty, in: { normal: 1, nightmare: 2, hell: 3 }, scope: true, predicates: true
+  enumerize :difficulty, in: { normal: 1, nightmare: 2, hell: 3 }, default: :normal, scope: true, predicates: true
 end
