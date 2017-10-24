@@ -40,6 +40,8 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'simple_form', '~> 3.5'
 gem 'simple_form-magic_submit', '~> 1.2'
 
+gem 'enumerize', '~> 2.1', '>= 2.1.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
