@@ -10,6 +10,7 @@
 #  code       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  difficulty :integer
 #
 # Indexes
 #
@@ -22,4 +23,8 @@ class Question < ApplicationRecord
   has_many :answers
 
   belongs_to :topic
+
+  extend Enumerize
+
+  enumerize :difficulty, in: { normal: 1, nightmare: 2, hell: 3 }, scope: true, predicates: true
 end
