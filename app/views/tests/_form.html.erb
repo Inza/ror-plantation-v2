@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%#= f.association :subject %>
     <%= f.input :title %>
-    <%= f.input :questions %>
+    <%= f.association :questions, as: :check_boxes %>
   </div>
 
   <div class="form-actions">
