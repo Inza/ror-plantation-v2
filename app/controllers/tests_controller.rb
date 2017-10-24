@@ -40,8 +40,8 @@ class TestsController < ApplicationController
     redirect_to tests_url, notice: 'Test was successfully destroyed.'
   end
 
-  private
-    def set_test(id)
-      @test = Test.find(id)
-    end
+private
+  def set_test(id)
+    @test = Test.find(id)
+  end
 end
