@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  get 'subjects/index'
-
-  get 'subjects/show'
-
-  get 'subjects/new'
-
-  get 'subjects/edit'
-
+  resources :subjects
   resources :tests
 
   root to: 'tests#index'
