@@ -21,7 +21,7 @@ class Template < ApplicationRecord
   def generate_test
     raise 'I cannot generate test without subject' unless subject.present?
 
-    test = Test.new(template: self)
+    test = Test.new(template: self, subject: subject)
     # TODO What will happen when Template is deleted and created again?
     number = Test.where(template: self, subject: subject).count
     test.title = "#{title} ##{number}"
