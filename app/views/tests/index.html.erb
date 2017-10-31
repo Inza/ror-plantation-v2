@@ -33,5 +33,9 @@
 <br>
 
 <%= link_to new_test_path, class: 'btn btn-success' do %>
-    <%= fa_icon 'plus', text: 'New Test' %>
+    <%= fa_icon 'plus', text: 'Create Test' %>
+<% end %>
+
+<%= link_to generate_new_tests_path, class: 'btn btn-info' do %>
+    <%= fa_icon 'cogs', text: 'Generate Test' %>
 <% end %>
