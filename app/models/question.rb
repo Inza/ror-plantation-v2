@@ -27,4 +27,12 @@ class Question < ApplicationRecord
   extend Enumerize
 
   enumerize :difficulty, in: { normal: 1, nightmare: 2, hell: 3 }, default: :normal, scope: true, predicates: true
+
+  def abcd?
+    answers.any?
+  end
+
+  def free_text?
+    !abcd?
+  end
 end
