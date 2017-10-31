@@ -7,6 +7,14 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
+  def generate_new
+
+  end
+
+  def generate(template_id)
+
+  end
+
   def show
   end
 
