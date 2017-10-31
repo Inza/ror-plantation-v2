@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   permits :title, :subject_id, question_ids: []
 
   def index
-    @tests = Test.all
+    @tests = Test.with_subject_title('Webové technologie')
   end
 
   def generate_new

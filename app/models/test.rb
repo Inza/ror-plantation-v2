@@ -28,4 +28,6 @@ class Test < ApplicationRecord
 
   # Alternatice (better) syntax
   validates :title, presence: true#, numericality: true
+
+  scope :with_subject_title, -> (subject) { includes([:subject]).where(subject: { title: subject }).order('created_at DESC') }
 end
