@@ -10,7 +10,7 @@ module Services
 
     def generate!
       test = generate
-      test.save
+      test.save!
     end
   end
 end
