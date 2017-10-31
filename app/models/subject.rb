@@ -12,6 +12,7 @@
 class Subject < ApplicationRecord
   has_many :topics, dependent: :destroy
   has_many :tests, dependent: :destroy
+  has_many :templates, dependent: :destroy
   has_many :subject_assignments, dependent: :destroy
   has_many :study_programs, through: :subject_assignments
 
