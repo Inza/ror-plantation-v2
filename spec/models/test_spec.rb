@@ -2,15 +2,17 @@
 #
 # Table name: tests
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  subject_id :integer
+#  id          :integer          not null, primary key
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  subject_id  :integer
+#  template_id :integer
 #
 # Indexes
 #
-#  index_tests_on_subject_id  (subject_id)
+#  index_tests_on_subject_id   (subject_id)
+#  index_tests_on_template_id  (template_id)
 #
 
 require 'rails_helper'

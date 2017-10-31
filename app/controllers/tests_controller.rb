@@ -4,7 +4,21 @@ class TestsController < ApplicationController
   permits :title, :subject_id, question_ids: []
 
   def index
-    @tests = Test.all
+    @subject = Subject.by_code(:web).first # TODO make dynamic, move to before_action
+    @tests = Test.with_subject_title('Webové Technologie')
+  end
+
+  def generate_new(subject_id)
+    @subject = Subject.by_code(:web).first # TODO make dynamic, move to before_action
+    @templates = Template.for_subject(subject_id)
+  end
+
+  def generate(template_id)
+    if Services::TestGenerator.new(template_id).generate!
+      redirect_to tests_path, notice: 'Test was successfully generated.'
+    else
+      redirect_to tests_path, alert: 'Test generation failed.'
+    end
   end
 
   def show
