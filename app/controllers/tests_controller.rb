@@ -12,7 +12,14 @@ class TestsController < ApplicationController
   end
 
   def generate(template_id)
+    template = Template.find(template_id)
+    test = template.generate_test
 
+    if test.save
+      redirect_to tests_path, notice: 'Test was successfully generated.'
+    else
+      redirect_to tests_path, alert: 'Test generation failed.'
+    end
   end
 
   def show
