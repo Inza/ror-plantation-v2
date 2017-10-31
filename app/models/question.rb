@@ -28,6 +28,9 @@ class Question < ApplicationRecord
 
   enumerize :difficulty, in: { normal: 1, nightmare: 2, hell: 3 }, default: :normal, scope: true, predicates: true
 
+  validates :title, presence: true
+  validates :score, presence: true, numericality: :only_integer
+
   def abcd?
     answers.any?
   end
