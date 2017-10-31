@@ -1,0 +1,6 @@
+<h1>Select Template from subject <%= @subject.title %></h1>
+
+<% if @templates.any? %>
+<% else %>
+    There are no templates for subject <%= @subject.title %>
+<% end %>
