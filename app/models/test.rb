@@ -20,6 +20,7 @@ class Test < ApplicationRecord
   has_many :questions, through: :question_assignments
 
   belongs_to :subject
+  belongs_to :template, optional: true
 
   # Simple validation syntax (not so great)
   #validates_presence_of :title, :desription
