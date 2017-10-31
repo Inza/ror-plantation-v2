@@ -18,9 +18,9 @@
 #
 
 class Question < ApplicationRecord
-  has_many :question_assignments
+  has_many :question_assignments, dependent: :destroy
   has_many :tests, through: :question_assignments
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   belongs_to :topic
 

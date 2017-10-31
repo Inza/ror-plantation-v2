@@ -10,9 +10,9 @@
 #
 
 class Subject < ApplicationRecord
-  has_many :topics
-  has_many :tests
-  has_many :subject_assignments
+  has_many :topics, dependent: :destroy
+  has_many :tests, dependent: :destroy
+  has_many :subject_assignments, dependent: :destroy
   has_many :study_programs, through: :subject_assignments
 
   validates :title, presence: true

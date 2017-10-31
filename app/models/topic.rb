@@ -14,9 +14,9 @@
 #
 
 class Topic < ApplicationRecord
-  has_many :topic_assignments
+  has_many :topic_assignments, dependent: :destroy
   has_many :tests, through: :topic_assignments
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   belongs_to :subject
 end
