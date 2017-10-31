@@ -17,4 +17,6 @@ class Subject < ApplicationRecord
 
   validates :title, presence: true
   validates :code, presence: true
+
+  scope :by_code, -> (code) { where(code: code.to_s.upcase) }
 end
