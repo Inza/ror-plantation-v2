@@ -29,7 +29,7 @@ class Test < ApplicationRecord
   #validates_numericality_of :title
 
   # Alternatice (better) syntax
-  validates :title, presence: true#, numericality: true
+  validates :title, presence: true
 
   scope :with_subject_title, -> (subject) { includes([:subject]).where(subjects: { title: subject }).order('tests.created_at DESC') }
 end
