@@ -24,11 +24,6 @@ class Test < ApplicationRecord
   belongs_to :subject
   belongs_to :template, optional: true
 
-  # Simple validation syntax (not so great)
-  #validates_presence_of :title, :desription
-  #validates_numericality_of :title
-
-  # Alternatice (better) syntax
   validates :title, presence: true
 
   scope :with_subject_title, -> (subject) { includes([:subject]).where(subjects: { title: subject }).order('tests.created_at DESC') }
