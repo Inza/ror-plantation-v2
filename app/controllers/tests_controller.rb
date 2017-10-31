@@ -5,7 +5,7 @@ class TestsController < ApplicationController
 
   def index
     @subject = Subject.by_code(:web).first # TODO make dynamic, move to before_action
-    @tests = Test.with_subject_title('Webové technologie')
+    @tests = Test.with_subject_title('Webové Technologie')
   end
 
   def generate_new(subject_id)
