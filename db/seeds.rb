@@ -9,11 +9,11 @@
 if Subject.where(code: 'WEB').count == 0
   web = Subject.create!(title: 'Webové Technologie', code: 'WEB')
 
-  ['HTML', 'CSS', 'JS'].each do |topic|
-    topic = Topic.create!(subject: web, title: topic)
+  ['HTML', 'CSS', 'JS'].each do |topic_name|
+    topic = Topic.create!(subject: web, title: topic_name)
 
-    topic.questions << Question.new(topic: topic, title: "Co je to #{topic}?", score: 5, hint: 'napište význam zkratky i k čemu se to používá')
-    topic.questions << Question.new(topic: topic, title: "K čemu slouží #{topic}? K čemu se naopak používat nemá?", score: 5, hint: 'napište k čemu se to používá a k čemu se to používat nemá')
+    topic.questions << Question.new(topic: topic, title: "Co je to #{topic_name}?", score: 5, hint: 'napište význam zkratky i k čemu se to používá')
+    topic.questions << Question.new(topic: topic, title: "K čemu slouží #{topic_name}? K čemu se naopak používat nemá?", score: 5, hint: 'napište k čemu se to používá a k čemu se to používat nemá')
 
     topic.save!
   end
