@@ -1,6 +1,13 @@
 <h1>Select Template from subject <%= @subject.title %></h1>
 
 <% if @templates.any? %>
+    <ul>
+      <% @templates.each do |template| %>
+      <li>
+        <%= link_to template.title, generate_tests_path(template_id: template.id), method: :post %>
+      </li>
+      <% end %>
+    </ul>
 <% else %>
     There are no templates for subject <%= @subject.title %>
 <% end %>
