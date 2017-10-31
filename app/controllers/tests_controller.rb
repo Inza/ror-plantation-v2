@@ -4,11 +4,13 @@ class TestsController < ApplicationController
   permits :title, :subject_id, question_ids: []
 
   def index
+    @subject = Subject.by_code(:web).first # TODO make dynamic, move to before_action
     @tests = Test.with_subject_title('Webové technologie')
   end
 
-  def generate_new
-
+  def generate_new(subject_id)
+    @subject = Subject.by_code(:web).first # TODO make dynamic, move to before_action
+    @templates = Template.for_subject(subject_id)
   end
 
   def generate(template_id)
