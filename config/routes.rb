@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :subjects do
+    get 'topics/new'
+  end
+
+  namespace :subjects do
+    get 'topics/edit'
+  end
+
   resources :subjects
   resources :tests do
     collection do
