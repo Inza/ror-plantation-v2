@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  namespace :subjects do
-    get 'topics/new'
+  resources :subjects do
+    member do
+      get 'topics/new', action: :new
+      post 'topics/create', action: :create
+      get 'topics/:topic_id/edit', action: :edit
+      put 'topics/:topic_id/update', action: :update
+      delete 'topic/:topic_id', action: :destroy
+    end
   end
-
-  namespace :subjects do
-    get 'topics/edit'
-  end
-
-  resources :subjects
   resources :tests do
     collection do
       get 'generate_new/:subject_id', action: :generate_new, as: :generate_new
