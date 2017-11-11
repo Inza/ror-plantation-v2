@@ -1,2 +1,31 @@
-<h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+<h1><%= @subject.title %></h1>
+<h2>Topics</h2>
+
+<% if @subject.topics.any? %>
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @subject.topics.each do |topic| %>
+        <tr>
+          <td><%= topic.title %></td>
+          <td><%= link_to 'Edit', '#', class: 'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', '#', class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to '#', class: 'btn btn-success' do %>
+      <%= fa_icon 'plus', text: 'Create Test' %>
+  <% end %>
+<% else %>
+    <%= alert_box "Subject \"#{@subject.title}\" does not have any topics", dismissible: true %>
+<% end %>
