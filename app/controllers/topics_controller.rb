@@ -1,4 +1,4 @@
-class Subjects::TopicsController < ApplicationController
+class TopicsController < ApplicationController
   before_action :set_subject
   before_action :set_topic, only: [:edit, :update, :destroy]
 
@@ -36,11 +36,11 @@ class Subjects::TopicsController < ApplicationController
   end
 
 private
-  def set_subject(id)
-    @subject = Subject.find(id)
+  def set_subject(subject_id)
+    @subject = Subject.find(subject_id)
   end
 
-  def set_topic(topic_id)
-    @topic = Topic.find(topic_id)
+  def set_topic(id)
+    @topic = Topic.find(id)
   end
 end

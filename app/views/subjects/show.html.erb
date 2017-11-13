@@ -23,8 +23,8 @@
 
   <br>
 
-  <%= link_to '#', class: 'btn btn-success' do %>
-      <%= fa_icon 'plus', text: 'Create Test' %>
+  <%= link_to new_subject_topic_path(subject_id: @subject.id), class: 'btn btn-success' do %>
+      <%= fa_icon 'plus', text: 'New Topic' %>
   <% end %>
 <% else %>
     <%= alert_box "Subject \"#{@subject.title}\" does not have any topics", dismissible: true %>
