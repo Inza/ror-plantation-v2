@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :subjects
+  resources :subjects do
+    resources :topics, only: [:new, :create, :edit, :update, :destroy]
+  end
   resources :tests do
     collection do
       get 'generate_new/:subject_id', action: :generate_new, as: :generate_new
