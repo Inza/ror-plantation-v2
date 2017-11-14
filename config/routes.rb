@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  get 'study_programs/index'
-
-  get 'study_programs/new'
-
-  get 'study_programs/edit'
+  resources :study_programs, except: [:show]
 
   resources :subjects do
     resources :topics, only: [:new, :create, :edit, :update, :destroy]
   end
+
   resources :tests do
     collection do
       get 'generate_new/:subject_id', action: :generate_new, as: :generate_new

@@ -1,0 +1,11 @@
+<%= simple_form_for(@study_program) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :title %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :magic_submit, cancel: study_programs_path %>
+    </div>
+<% end %>
