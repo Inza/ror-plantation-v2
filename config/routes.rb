@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :study_programs, except: [:show]
+
+    root to: 'study_programs#index'
   end
 
   resources :subjects do
