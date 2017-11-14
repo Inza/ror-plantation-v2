@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :study_programs, except: [:show]
+  namespace :admin do
+    resources :study_programs, except: [:show]
+  end
 
   resources :subjects do
     resources :topics, only: [:new, :create, :edit, :update, :destroy]

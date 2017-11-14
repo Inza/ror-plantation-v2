@@ -12,8 +12,8 @@
   <% @study_programs.each do |study_program| %>
       <tr>
         <td><%= study_program.title %></td>
-        <td><%= link_to 'Edit', edit_study_program_path(study_program), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Destroy', study_program, class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_study_program_path(study_program), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', [:admin, study_program], class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
   </tbody>
@@ -21,6 +21,6 @@
 
 <br>
 
-<%= link_to new_study_program_path, class: 'btn btn-success' do %>
+<%= link_to new_admin_study_program_path, class: 'btn btn-success' do %>
     <%= fa_icon 'plus', text: 'New Study Program' %>
 <% end %>
