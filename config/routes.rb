@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'study_programs/index'
+
+  get 'study_programs/new'
+
+  get 'study_programs/edit'
+
   resources :subjects do
     resources :topics, only: [:new, :create, :edit, :update, :destroy]
   end
