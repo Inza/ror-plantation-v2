@@ -14,18 +14,16 @@
     <% @subject.topics.each do |topic| %>
         <tr>
           <td><%= topic.title %></td>
-          <td><%= link_to 'Edit', '#', class: 'btn btn-primary' %></td>
-          <td><%= link_to 'Destroy', '#', class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_subject_topic_path(subject_id: @subject.id, id: topic.id), class: 'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', subject_topic_path(subject_id: @subject.id, id: topic.id), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to new_subject_topic_path(subject_id: @subject.id), class: 'btn btn-success' do %>
-      <%= fa_icon 'plus', text: 'New Topic' %>
-  <% end %>
 <% else %>
     <%= alert_box "Subject \"#{@subject.title}\" does not have any topics", dismissible: true %>
+<% end %>
+
+<%= link_to new_subject_topic_path(subject_id: @subject.id), class: 'btn btn-success', data: { :'disable_with' => 'Loading...' } do %>
+    <%= fa_icon 'plus', text: 'New Topic' %>
 <% end %>
