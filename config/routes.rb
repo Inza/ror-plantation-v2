@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :subjects do
     resources :topics, only: [:new, :create, :edit, :update, :destroy]
+    resources :templates, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :tests do
