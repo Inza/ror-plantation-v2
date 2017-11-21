@@ -14,7 +14,7 @@
 #  index_template_question_assignments_on_template_id  (template_id)
 #
 
-class TemplateQuestionAssignment < ApplicationRecord
+class TemplateTopicAssignment < ApplicationRecord
   belongs_to :template
   belongs_to :question
 end
