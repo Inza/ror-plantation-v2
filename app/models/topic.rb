@@ -19,8 +19,8 @@ class Topic < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
-  has_many :template_question_assignments
-  has_many :templates, through: :template_question_assignments
+  has_many :template_topic_assignments
+  has_many :templates, through: :template_topic_assignments
 
   belongs_to :subject
 end
