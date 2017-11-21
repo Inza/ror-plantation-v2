@@ -16,6 +16,9 @@
 class Template < ApplicationRecord
   belongs_to :subject
 
+  has_many :template_question_assignments
+  has_many :questions, through: :template_question_assignments
+
   scope :for_subject, -> (subject_id) { where(subject_id: subject_id).order('title ASC') }
 
   def generate_test
