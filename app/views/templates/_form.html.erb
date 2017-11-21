@@ -6,7 +6,7 @@
     </div>
 
     <div class="form-inputs">
-      <%= f.association :topics, as: :check_boxes %>
+      <%= f.association :topics, collection: @subject.topics, as: :check_boxes %>
     </div>
 
     <div class="form-actions">
