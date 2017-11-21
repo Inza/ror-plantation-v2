@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121084011) do
+ActiveRecord::Schema.define(version: 20171121085504) do
 
   create_table "answers", force: :cascade do |t|
     t.string "title"
@@ -64,13 +64,13 @@ ActiveRecord::Schema.define(version: 20171121084011) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "template_question_assignments", force: :cascade do |t|
+  create_table "template_topic_assignments", force: :cascade do |t|
     t.integer "template_id"
     t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_template_question_assignments_on_question_id"
-    t.index ["template_id"], name: "index_template_question_assignments_on_template_id"
+    t.index ["question_id"], name: "index_template_topic_assignments_on_question_id"
+    t.index ["template_id"], name: "index_template_topic_assignments_on_template_id"
   end
 
   create_table "templates", force: :cascade do |t|
