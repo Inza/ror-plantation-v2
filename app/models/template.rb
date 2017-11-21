@@ -16,7 +16,12 @@
 class Template < ApplicationRecord
   belongs_to :subject
 
+  has_many :template_topic_assignments
+  has_many :topics, through: :template_topic_assignments
+
   scope :for_subject, -> (subject_id) { where(subject_id: subject_id).order('title ASC') }
+
+  validates :title, presence: true
 
   def generate_test
     raise 'I cannot generate test without subject' unless subject.present?
