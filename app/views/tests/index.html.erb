@@ -1,39 +1,47 @@
 <h1>Tests</h1>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subject</th>
-      <th>Questions</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @subjects.each do |subject| %>
+    <h2><%= subject.title %> (<%= subject.code %>)</h2>
 
-  <tbody>
-    <% @tests.each do |test| %>
-      <tr>
-        <td><%= test.title %></td>
-        <td><%= test.subject.title if test.subject.present? %></td>
-        <td><%= raw test.questions.map{|q| q.title}.join(',<br>') if test.questions.any? %></td>
-        <td>
-          <%= link_to test, class: 'btn btn-default' do %>
-              <%= fa_icon 'info-circle', text: 'Show' %>
+    <% if subject.tests.any? %>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Subject</th>
+            <th>Questions</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% subject.tests.each do |test| %>
+            <tr>
+              <td><%= test.title %></td>
+              <td><%= test.subject.title if test.subject.present? %></td>
+              <td><%= raw test.questions.map{|q| q.title}.join(',<br>') if test.questions.any? %></td>
+              <td>
+                <%= link_to test, class: 'btn btn-default' do %>
+                    <%= fa_icon 'info-circle', text: 'Show' %>
+                <% end %>
+              </td>
+              <td><%= link_to 'Edit', edit_test_path(test), class: 'btn btn-primary' %></td>
+              <td><%= link_to 'Destroy', test, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
           <% end %>
-        </td>
-        <td><%= link_to 'Edit', edit_test_path(test), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Destroy', test, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        </tbody>
+      </table>
+    <% else %>
+        <%= alert_box 'This subject does not have any tests', dismissible: true, context: :warning %>
     <% end %>
-  </tbody>
-</table>
+<% end %>
 
 <br>
 
-<%= link_to new_test_path, class: 'btn btn-success' do %>
-    <%= fa_icon 'plus', text: 'Create Test' %>
-<% end %>
+<%#= link_to new_test_path, class: 'btn btn-success' do %>
+    <%#= fa_icon 'plus', text: 'Create Test' %>
+<%# end %>
 
-<%= link_to generate_new_tests_path(subject_id: @subject.id), class: 'btn btn-info' do %>
-    <%= fa_icon 'cogs', text: 'Generate Test' %>
-<% end %>
+<%#= link_to generate_new_tests_path(subject_id: @subject.id), class: 'btn btn-info' do %>
+    <%#= fa_icon 'cogs', text: 'Generate Test' %>
+<%# end %>

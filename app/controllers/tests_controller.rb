@@ -3,9 +3,12 @@ class TestsController < ApplicationController
 
   permits :title, :subject_id, question_ids: []
 
-  def index
-    @subject = Subject.by_code(:web).first # TODO make dynamic, move to before_action
-    @tests = Test.with_subject_title('Webové Technologie')
+  def index(subject_id: nil)
+    if subject_id.present?
+      @subjects = [Subject.find(subject_id)]
+    else
+      @subjects = Subject.all
+    end
   end
 
   def generate_new(subject_id)
