@@ -2,7 +2,7 @@ class TemplatesController < ApplicationController
   before_action :set_subject
   before_action :set_template, only: [:edit, :update, :destroy]
 
-  permits :title
+  permits :title, topic_ids: []
 
   def new
     @template = Template.new(subject: @subject)
