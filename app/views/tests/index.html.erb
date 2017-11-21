@@ -1,5 +1,9 @@
 <h1>Tests</h1>
 
+<% if @subjects.size == 1 %>
+    <%= link_to "Show subject #{@subjects.first.title}", subject_path(@subjects.first) %>
+<% end %>
+
 <% @subjects.each do |subject| %>
     <h2><%= subject.title %> (<%= subject.code %>)</h2>
 

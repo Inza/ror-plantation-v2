@@ -1,4 +1,8 @@
-<h1><%= @subject.title %></h1>
+
+<h1><%= @subject.title %> (<%= @subject.code %>)</h1>
+
+<%= link_to "Show tests for subject #{@subject.title}", tests_path(subject_id: @subject.id) %>
+
 <h2>Topics</h2>
 
 <% if @subject.topics.any? %>

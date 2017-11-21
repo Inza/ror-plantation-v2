@@ -19,6 +19,7 @@
               <%= fa_icon 'info-circle', text: 'Show' %>
           <% end %>
         </td>
+        <td><%= link_to 'Tests', tests_path(subject_id: subject.id), class: 'btn btn-info' %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject), class: 'btn btn-primary' %></td>
         <td><%= link_to 'Destroy', subject, class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
       </tr>
