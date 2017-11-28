@@ -8,7 +8,9 @@
 
 if Subject.where(code: 'WEB').count == 0
   web = Subject.create!(title: 'Webové Technologie', code: 'WEB')
+  print '.'
 
+  topics = []
   ['HTML', 'CSS', 'JS'].each do |topic_name|
     topic = Topic.create!(subject: web, title: topic_name)
 
@@ -16,7 +18,14 @@ if Subject.where(code: 'WEB').count == 0
     topic.questions << Question.new(topic: topic, title: "K čemu slouží #{topic_name}? K čemu se naopak používat nemá?", score: 5, hint: 'napište k čemu se to používá a k čemu se to používat nemá')
 
     topic.save!
+    topics << topic
+    print '.'
   end
 
   web_template = Template.create!(subject: web, title: 'Semestrální Test 1')
+  web_template.topics = topics
+  web_template.save!
+  print '.'
+
+  puts
 end
