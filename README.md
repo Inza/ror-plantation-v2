@@ -19,6 +19,8 @@ Git Repository with project form lectures is at: https://github.com/Inza/ror-pla
   
 ### Model Diagram
 
+You can generate the UML diagram at: https://www.planttext.com/
+
 ```plantuml
 @startuml
 enum Difficulty {

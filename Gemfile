@@ -64,6 +64,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'erd', '~> 0.4.0'
   gem 'rails-erd', '~> 1.5', '>= 1.5.2'
+  gem 'rack-mini-profiler', '~> 0.10.7'
+  gem 'meta_request', '~> 0.4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
