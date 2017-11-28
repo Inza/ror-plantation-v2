@@ -66,6 +66,7 @@ group :development do
   gem 'rails-erd', '~> 1.5', '>= 1.5.2'
   gem 'rack-mini-profiler', '~> 0.10.7'
   gem 'meta_request', '~> 0.4.3'
+  gem 'bullet', '~> 5.6', '>= 5.6.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
