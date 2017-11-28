@@ -5,9 +5,9 @@ class TestsController < ApplicationController
 
   def index(subject_id: nil)
     if subject_id.present?
-      @subjects = [Subject.find(subject_id)]
+      @subjects = [Subject.includes(:tests => [:questions]).find(subject_id)]
     else
-      @subjects = Subject.all
+      @subjects = Subject.includes(:tests => [:questions]).all
     end
   end
 
