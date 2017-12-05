@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :subject do
-    title "MyString"
-    code "MyString"
+    title "Koloťuk"
+    code "KOT"
   end
 end
