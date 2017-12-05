@@ -1,6 +1,8 @@
+#require 'ffaker'
+
 FactoryBot.define do
   factory :example do
-    title "MyString"
+    title FFaker::Name.name
     text "MyText"
     published false
     subject nil
