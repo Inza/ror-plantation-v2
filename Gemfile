@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6', '>= 3.6.1'
   gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
   gem 'ffaker', '~> 2.7'
+  gem 'spinach-rails', '~> 0.2.1'
 end
 
 group :development do
