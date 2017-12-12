@@ -2,6 +2,8 @@ ENV['RAILS_ENV'] = 'test'
 require './config/environment'
 
 #require 'spinach/rspec/mocks'
+require 'minitest/spec'
+require 'rspec-rails'
 
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
