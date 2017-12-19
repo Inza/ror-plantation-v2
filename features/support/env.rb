@@ -1,4 +1,6 @@
 ENV['RAILS_ENV'] = 'test'
+require 'simplecov'
+SimpleCov.start
 require './config/environment'
 
 #require 'spinach/rspec/mocks'
