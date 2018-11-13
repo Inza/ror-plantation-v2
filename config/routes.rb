@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :subjects do
-    resources :topics, only: [:new, :create, :edit, :update, :destroy]
+    resources :topics, except: [:index]
     resources :templates, only: [:new, :create, :edit, :update, :destroy]
   end
 
