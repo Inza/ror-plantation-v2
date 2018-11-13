@@ -62,6 +62,7 @@ end
 
 group :development do
   gem 'annotate', '~> 2.7', '>= 2.7.2'
+  gem 'awesome_print', '~> 1.8'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
