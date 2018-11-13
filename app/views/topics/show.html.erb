@@ -1,0 +1,11 @@
+<%= link_to "Zpět na předmět #{@topic.subject.title}", @topic.subject %>
+
+<h1>
+  <%= @topic.title %>
+</h1>
+
+<% @topic.questions.each_with_index do |question, i| %>
+  <h2>
+    <%= i+1 %>. <%= question.title %>
+  </h2>
+<% end %>

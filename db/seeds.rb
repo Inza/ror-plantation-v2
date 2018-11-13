@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if Subject.where(code: 'WEB').count == 0
+unless Subject.by_code(:web).any?
   web = Subject.create!(title: 'Webové Technologie', code: 'WEB')
   print '.'
 

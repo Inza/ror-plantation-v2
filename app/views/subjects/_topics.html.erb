@@ -5,6 +5,7 @@
     <table class="table table-striped table-hover">
       <thead>
       <tr>
+        <th>#</th>
         <th>Title</th>
         <th colspan="3"></th>
       </tr>
@@ -13,7 +14,9 @@
       <tbody>
       <% @subject.topics.each do |topic| %>
           <tr>
+            <td><%= topic.id %></td>
             <td><%= topic.title %></td>
+            <td><%= link_to 'Show', subject_topic_path(subject_id: @subject.id, id: topic.id), class: 'btn btn-default' %></td>
             <td><%= link_to 'Edit', edit_subject_topic_path(subject_id: @subject.id, id: topic.id), class: 'btn btn-primary' %></td>
             <td><%= link_to 'Destroy', subject_topic_path(subject_id: @subject.id, id: topic.id), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?' } %></td>
           </tr>
