@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'student_dashboard/index'
+
   namespace :admin do
     resources :study_programs, except: [:show]
 
