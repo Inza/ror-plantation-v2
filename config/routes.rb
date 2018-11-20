@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'student_dashboard/index'
-
   namespace :admin do
     resources :study_programs, except: [:show]
 
     root to: 'study_programs#index'
   end
+
+  get 'student_dashboard', to: 'student_dashboard#index'
 
   resources :subjects do
     resources :topics, except: [:index]
