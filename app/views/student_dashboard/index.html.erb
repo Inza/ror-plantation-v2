@@ -1,0 +1,18 @@
+<h1>Seznam předmětů</h1>
+
+<p>Vyberte předmět, který si chcete procvičit</p>
+
+<ul>
+<% @subjects.each do |subject| %>
+  <li>
+    <%= subject.title %>
+    <% if subject.study_programs.any? %>
+      <%= "(#{subject.study_programs.map(&:title).join(', ')})" %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
+
+<hr>
+
+<%#= raw ap(@subjects) %>

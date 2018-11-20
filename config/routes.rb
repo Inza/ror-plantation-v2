@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     root to: 'study_programs#index'
   end
 
+  get 'student_dashboard', to: 'student_dashboard#index'
+
   resources :subjects do
     resources :topics, except: [:index]
     resources :templates, only: [:new, :create, :edit, :update, :destroy]
